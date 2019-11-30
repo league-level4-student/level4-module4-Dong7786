@@ -1,4 +1,5 @@
 package _01_introduction_to_encapsulation;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Test;
@@ -90,14 +91,45 @@ public class EncapsulateTheData {
 	@Test
 	public void testItemsReceived() {
 		setItemsReceived(5);
-		assertEquals(5, getItemsReceived());
+			assertEquals(5, getItemsReceived());
 		setItemsReceived(-5);
-		assertEquals(0, getItemsReceived());
+			assertEquals(0, getItemsReceived());
 		setItemsReceived(100);
-		assertEquals(100, getItemsReceived());
+			assertEquals(100, getItemsReceived());
 	}
 	
-
+	@Test
+	public void testNomenclature() {
+		setNomenclature("Hello");
+			assertEquals("Hello", getNomenclature());
+		setNomenclature("");
+			assertEquals(" ", getNomenclature());
+		
+	}
+	
+	@Test
+	public void testMemberObj() {
+		setMemberObj(1);
+			assertEquals(1, getMemberObj());
+		setMemberObj("Hello");
+			assertNotEquals("Hello", getMemberObj());
+		
+	}
+	
+	@Test
+	public void testDegreesTurned() {
+		setDegreesTurned(-1);
+			assertNotEquals(-1, getDegreesTurned());
+		setDegreesTurned(0);
+			assertEquals(0, getDegreesTurned());
+		setDegreesTurned(180);
+			assertEquals(180, getDegreesTurned());
+		setDegreesTurned(360);
+			assertEquals(360, getDegreesTurned());
+		setDegreesTurned(361);
+			assertNotEquals(361, getDegreesTurned());
+		
+	}
 	
 	
 	
