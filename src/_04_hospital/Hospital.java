@@ -31,13 +31,13 @@ public class Hospital {
 	}
 
 	void assignPatientsToDoctors() {
-		for (Doctor d : doctors) {
-			for (Patient p : patients) {
+		for(int i = 0; i < doctors.size(); i ++) {
+			for(int p = patients.size() -1; p >= 0; p --) {
+				System.out.println(patients.size() + ", " + i);
 				try {
-					d.assignPatient(p);
+					doctors.get(i).assignPatient(patients.get(p));
 					patients.remove(p);
 				} catch (DoctorFullException e) {
-					// TODO Auto-generated catch block
 					break;
 				}
 				
@@ -47,9 +47,12 @@ public class Hospital {
 		}
 
 	}
-
-	
-	
+	/* doctor size: 3 		doctor number: 2
+	 * patient size: 0		assigned patients: 2
+	 * 
+	 * i = 2; 
+	 * p = 2;
+	 */
 
 	
 }

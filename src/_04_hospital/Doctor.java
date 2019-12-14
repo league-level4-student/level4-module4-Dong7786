@@ -23,14 +23,19 @@ public class Doctor extends Hospital{
 	}
 	
 	public void assignPatient(Patient p) throws DoctorFullException{
-		
 		if(patients.size() > 2) {
 			throw new DoctorFullException();
+			
 
 		}else {
 			patients.add(p);
 			
 		}
+		
+	}
+	public ArrayList<Patient> getPatients() {
+		return patients;
+		
 		
 	}
 	
